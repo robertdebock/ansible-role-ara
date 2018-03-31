@@ -22,6 +22,9 @@ ara_packages:
     - libffi-devel
     - openssl-devel
     - redhat-rpm-config
+  openSUSE Leap:
+    - gcc
+    - python-devel
   Ubuntu:
     - gcc
     - python-dev
