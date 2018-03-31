@@ -18,17 +18,17 @@ scenario:
   name: alpine-3.6
   test_sequence:
     - lint
-#    - destroy
+    - destroy
     - dependency
-#    - syntax
+    - syntax
     - create
-#    - prepare
+    - prepare
     - converge
-#    - idempotence
-#    - check
-#    - side_effect
-#    - verify
-#    - destroy
+    - idempotence
+    - check
+    - side_effect
+    - verify
+    - destroy
 verifier:
   name: goss
   lint:
