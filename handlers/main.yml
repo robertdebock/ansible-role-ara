@@ -1,0 +1,6 @@
+---
+# handlers file for ara
+- name: restart ara
+  service:
+    name: ara
+    state: restarted

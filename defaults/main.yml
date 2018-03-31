@@ -1,0 +1,5 @@
+---
+# defaults file for ara
+ara_configuration:
+  - option: port
+    value: 8080

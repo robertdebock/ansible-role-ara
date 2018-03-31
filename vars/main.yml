@@ -1,0 +1,22 @@
+---
+# vars file for ara
+ara_packages:
+  Alpine:
+    - linux-headers
+  CentOS:
+    - gcc
+    - python-devel
+    - libffi-devel
+    - openssl-devel
+    - redhat-rpm-config
+  Debian:
+    - gcc
+    - python-dev
+    - libffi-dev
+    - libssl-dev
+  Fedora:
+    - gcc
+    - python-devel
+    - libffi-devel
+    - openssl-devel
+    - redhat-rpm-config

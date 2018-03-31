@@ -1,0 +1,47 @@
+---
+# tasks file for ara
+- name: install required packages
+  package:
+    name: "{{ item }}"
+  with_items:
+    - "{{ ara_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(ara_packages[ansible_distribution]
+      | default(ara_packages['default'] )) }}"
+
+- name: install ara
+  pip:
+    name: ara
+
+- name: register ara to a sysvinit system
+  template:
+    src: templates/ara.j2
+    dest: "/etc/init.d/ara"
+    mode: 0750
+  when:
+    - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
+
+- name: register ara to a systemd system
+  template:
+    src: templates/ara.service.j2
+    dest: /etc/systemd/system/ara.service
+  when:
+    - ansible_service_mgr == "systemd"
+
+- name: configure ara
+  ini_file:
+    path: /etc/ansible/ansible.cfg
+    section: ara
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items:
+    - "{{ ara_configuration }}"
+  notify:
+    - restart ara
+
+- name: start and enable ara
+  service:
+    name: ara
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker"

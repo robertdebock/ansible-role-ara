@@ -1,0 +1,12 @@
+{{ ansible_managed | comment }}
+[Unit]
+Description=Ansible Runtime Analyser
+
+[Service]
+Type=forking
+
+ExecStart=ara-manage runserver
+ExecStop=killall ara-manage
+
+[Install]
+WantedBy=multi-user.target
