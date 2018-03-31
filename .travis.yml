@@ -13,9 +13,9 @@ env:
   - version=">=2.3,<2.4" distro="archlinux"
   - version=">=2.4,<2.5" distro="archlinux"
   - version=">=2.5,<2.6" distro="archlinux"
-  - version=">=2.3,<2.4" distro="centos-6"
-  - version=">=2.4,<2.5" distro="centos-6"
-  - version=">=2.5,<2.6" distro="centos-6"
+  - version=">=2.3,<2.4" distro="centos-6" expectation="fail"
+  - version=">=2.4,<2.5" distro="centos-6" expectation="fail"
+  - version=">=2.5,<2.6" distro="centos-6" expectation="fail"
   - version=">=2.3,<2.4" distro="centos-7"
   - version=">=2.4,<2.5" distro="centos-7"
   - version=">=2.5,<2.6" distro="centos-7"
@@ -28,9 +28,6 @@ env:
   - version=">=2.3,<2.4" distro="debian-stretch"
   - version=">=2.4,<2.5" distro="debian-stretch"
   - version=">=2.5,<2.6" distro="debian-stretch"
-  - version=">=2.3,<2.4" distro="debian-wheezy"
-  - version=">=2.4,<2.5" distro="debian-wheezy"
-  - version=">=2.5,<2.6" distro="debian-wheezy"
   - version=">=2.3,<2.4" distro="fedora-26"
   - version=">=2.4,<2.5" distro="fedora-26"
   - version=">=2.5,<2.6" distro="fedora-26"
@@ -63,7 +60,11 @@ install:
   - pip install docker-py
 
 script:
-  - molecule test --scenario-name "${distro}"
+  - if [ "${expectation}" = "fail" ] ; then
+      ! molecule test --scenario-name "${distro}"
+    else
+      molecule test --scenario-name "${distro}"
+    fi
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

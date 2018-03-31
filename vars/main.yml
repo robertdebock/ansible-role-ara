@@ -14,9 +14,16 @@ ara_packages:
     - python-dev
     - libffi-dev
     - libssl-dev
+  default:
+    - gcc
   Fedora:
     - gcc
     - python-devel
     - libffi-devel
     - openssl-devel
     - redhat-rpm-config
+  Ubuntu:
+    - gcc
+    - python-dev
+    - libffi-dev
+    - libssl-dev
