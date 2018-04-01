@@ -26,6 +26,8 @@
     dest: /etc/systemd/system/ara.service
   when:
     - ansible_service_mgr == "systemd"
+  notify:
+    - systemctl daemon-reload
 
 - name: configure ara
   ini_file:

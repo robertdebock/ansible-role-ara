@@ -3,10 +3,9 @@
 Description=Ansible Runtime Analyser
 
 [Service]
-Type=forking
-
-ExecStart=ara-manage runserver
-ExecStop=killall ara-manage
+Type=simple
+ExecStart=/usr/bin/ara-manage runserver
+ExecStop=/usr/bin/killall ara-manage
 
 [Install]
 WantedBy=multi-user.target
