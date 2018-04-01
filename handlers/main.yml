@@ -7,6 +7,6 @@
   when:
     - ansible_virtualization_type != "docker"
 
-- name: 
-  systemd: systemctl daemon-reload
+- name:
+  systemd:
     daemon_reload: yes
