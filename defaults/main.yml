@@ -1,5 +1,9 @@
 ---
 # defaults file for ara
 ara_configuration:
-  - option: port
+  port:
+    section: ara
     value: 8080
+  callback_plugins:
+    section: defaults
+    value: /usr/lib/python2.7/site-packages/ara/plugins/callbacks

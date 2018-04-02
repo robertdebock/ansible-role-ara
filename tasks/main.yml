@@ -32,11 +32,10 @@
 - name: configure ara
   ini_file:
     path: /etc/ansible/ansible.cfg
-    section: ara
-    option: "{{ item.option }}"
-    value: "{{ item.value }}"
-  with_items:
-    - "{{ ara_configuration }}"
+    section: "{{ item.value.section }}"
+    option: "{{ item.key }}"
+    value: "{{ item.value.value }}"
+  with_dict: "{{ ara_configuration }}"
   notify:
     - restart ara
 

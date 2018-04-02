@@ -20,7 +20,32 @@ Access to a repository containing packages, likely on the internet.
 Role Variables
 --------------
 
-None known
+You can configure ara using this structure:
+```
+ara_configuration:
+  port:
+    section: ara
+    value: 8080
+```
+
+These are the settings you can use.
+
+- dir
+- database
+- host
+- port
+- logconfig
+- logfile
+- loglevel
+- logformat
+- sqldebug
+- ignore_parameters
+- ignore_empty_generation
+- ignore_mimetype_warnings
+- playbook_override
+- playbook_per_page
+- result_per_page
+```
 
 Dependencies
 ------------
