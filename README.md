@@ -23,9 +23,9 @@ Role Variables
 You can configure ara using this structure:
 ```
 ara_configuration:
-  port:
-    section: ara
-    value: 8080
+  - port:
+      section: ara
+      value: 8080
 ```
 
 These are the settings you can use.

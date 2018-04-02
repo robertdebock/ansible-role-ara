@@ -1,6 +1,6 @@
 ---
 # defaults file for ara
 ara_configuration:
-  callback_plugins:
-    section: defaults
-    value: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
+  - callback_plugins:
+      section: defaults
+      value: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
