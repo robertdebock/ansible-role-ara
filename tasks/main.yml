@@ -11,6 +11,9 @@
 - name: install ara
   pip:
     name: ara
+  register: install_ara
+  until: install_ara is succeeded
+  retries: 3
 
 - name: register ara to a sysvinit system
   template:
