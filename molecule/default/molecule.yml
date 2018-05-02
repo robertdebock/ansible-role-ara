@@ -28,10 +28,10 @@ platforms:
     image: debian:stretch
   - name: ara-debian-wheezy
     image: debian:wheezy
-  - name: ara-fedora-26
-    image: fedora:26
   - name: ara-fedora-27
     image: fedora:27
+  - name: ara-fedora-28
+    image: fedora:28
   - name: ara-opensuse-42.2
     image: opensuse:42.2
   - name: ara-opensuse-42.3
