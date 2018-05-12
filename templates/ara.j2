@@ -51,9 +51,9 @@ case "$1" in
   reload)
     echo "not supported."
   ;;
-    *)
-  echo "Usage: <servicename> {start|stop|status|restart|reload}"
-  exit 1
+  *)
+    echo "Usage: <servicename> {start|stop|status|restart|reload}"
+    exit 1
   ;;
 esac
 
