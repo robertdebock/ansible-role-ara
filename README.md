@@ -45,7 +45,6 @@ These are the settings you can use.
 - playbook_override
 - playbook_per_page
 - result_per_page
-```
 
 Dependencies
 ------------
