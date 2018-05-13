@@ -41,6 +41,8 @@
   with_dict: "{{ ara_configuration }}"
   notify:
     - restart ara
+  loop_control:
+    label: "{{ item.key }}"
 
 - name: start and enable ara
   service:
