@@ -4,7 +4,8 @@ Description=Ansible Runtime Analyser
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/ara-manage runserver
+ExecStart={{ ara_binary_location[ansible_distribution]
+  | default(ara_binary_location['default'] ) }}/ara-manage runserver
 ExecStop=/usr/bin/killall ara-manage
 
 [Install]

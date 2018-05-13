@@ -30,3 +30,7 @@ ara_packages:
     - python-dev
     - libffi-dev
     - libssl-dev
+
+ara_binary_location:
+  Debian: /usr/local/bin
+  default: /usr/bin
