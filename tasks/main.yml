@@ -34,7 +34,7 @@
 
 - name: configure ara
   ini_file:
-    path: /etc/ansible/ansible.cfg
+    path: "{{ item.value.file }}"
     section: "{{ item.value.section }}"
     option: "{{ item.key }}"
     value: "{{ item.value.value }}"
