@@ -3,7 +3,7 @@ ara
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-ara.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-ara)
 
-Provides updates for your system.
+Provides ara (Ansible Runtime Analysis) for your system.
 
 Context
 -------
