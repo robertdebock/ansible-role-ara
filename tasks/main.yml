@@ -32,17 +32,14 @@
   notify:
     - systemctl daemon-reload
 
-- name: configure ara
+- name: configure ansible to use ara
   ini_file:
-    path: "{{ item.file }}"
-    section: "{{ item..section }}"
-    option: "{{ item.key }}"
-    value: "{{ item.value }}"
-  with_items: "{{ ara_configuration }}"
+    path: "{{ ara_configuration_file }}"
+    section: defaults
+    option: callback_plugins
+    value: "{{ ara_callback_plugins }}"
   notify:
     - restart ara
-  loop_control:
-    label: "{{ item.key }}"
 
 - name: start and enable ara
   service:

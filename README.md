@@ -21,14 +21,11 @@ Role Variables
 --------------
 
 - ara_configuration_file can be set and defaults to /etc/ansible/ansible.cfg.
+- ara_callback_plugins should point to where ara is installed.
 
 You can configure ara using this structure:
 ```
-ara_configuration:
-  - port:
-      file: "{{ ara_configuration_file }}"
-      section: ara
-      value: 8080
+
 ```
 
 These are the settings you can use.
