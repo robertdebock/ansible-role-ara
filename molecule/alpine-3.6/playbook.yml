@@ -9,4 +9,3 @@
     - role: robertdebock.buildtools
     - role: robertdebock.python-pip
     - role: ansible-role-ara
-      ara_callback_plugins: /home/travis/virtualenv/python2.7.14/lib/python2.7/site-packages
