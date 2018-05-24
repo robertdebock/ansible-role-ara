@@ -50,7 +50,7 @@
   notify:
     - restart ara
   with_items:
-    - ara_configuration
+    - "{{ ara_configuration }}"
 
 - name: start and enable ara
   service:
