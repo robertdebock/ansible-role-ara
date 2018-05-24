@@ -41,6 +41,17 @@
   notify:
     - restart ara
 
+- name: configure ara
+  ini_file:
+    path: "{{ ara_configuration_file }}"
+    section: ara
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  notify:
+    - restart ara
+  with_items:
+    - ara_configuration
+
 - name: start and enable ara
   service:
     name: ara
