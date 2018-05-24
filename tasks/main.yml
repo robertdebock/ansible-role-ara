@@ -34,11 +34,11 @@
 
 - name: configure ara
   ini_file:
-    path: "{{ item.value.file }}"
-    section: "{{ item.value.section }}"
+    path: "{{ item.file }}"
+    section: "{{ item..section }}"
     option: "{{ item.key }}"
-    value: "{{ item.value.value }}"
-  with_dict: "{{ ara_configuration }}"
+    value: "{{ item.value }}"
+  with_items: "{{ ara_configuration }}"
   notify:
     - restart ara
   loop_control:

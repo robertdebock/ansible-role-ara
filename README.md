@@ -20,12 +20,15 @@ Access to a repository containing packages, likely on the internet.
 Role Variables
 --------------
 
+- ara_configuration_file can be set and defaults to /etc/ansible/ansible.cfg.
+
 You can configure ara using this structure:
 ```
 ara_configuration:
-  port:
-    section: ara
-    value: 8080
+  - port:
+      file: "{{ ara_configuration_file }}"
+      section: ara
+      value: 8080
 ```
 
 These are the settings you can use.

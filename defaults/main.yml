@@ -1,7 +1,9 @@
 ---
 # defaults file for ara
+ara_configuration_file: /etc/ansible/ansible.cfg
+
 ara_configuration:
-  callback_plugins:
-    file: /etc/ansible/ansible.cfg
-    section: defaults
-    value: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
+  - callback_plugins:
+      file: "{{ ara_configuration_file }}"
+      section: defaults
+      value: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
