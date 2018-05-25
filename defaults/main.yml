@@ -4,10 +4,10 @@
 ara_configuration_file: /etc/ansible/ansible.cfg
 
 # Extra options can be set using this structure.
-#ara_configuration:
-#  - option: port
-#    value: 9191
-#  - option: playbook_per_page
-#    value: 10
-#  - option: result_per_page
-#    value: 25
+# ara_configuration:
+#   - option: port
+#     value: 9191
+#   - option: playbook_per_page
+#     value: 10
+#   - option: result_per_page
+#     value: 25
