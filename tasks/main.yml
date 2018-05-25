@@ -37,6 +37,10 @@
   changed_when: false
   register: ara_callback_plugins
 
+- name: show ara_callback_plugins
+  debug:
+    var: ara_callback_plugins
+
 - name: configure ansible to use ara
   ini_file:
     path: "{{ ara_configuration_file }}"
