@@ -32,14 +32,22 @@
   notify:
     - systemctl daemon-reload
 
+- name: find callback_plugins path
+  command: python -m ara.setup.callback_plugins
+  changed_when: false
+  register: ara_callback_plugins
+
 - name: configure ansible to use ara
   ini_file:
     path: "{{ ara_configuration_file }}"
     section: defaults
     option: callback_plugins
-    value: "{{ ara_callback_plugins }}"
+    value: "{{ ara_callback_plugins.stdout }}"
   notify:
     - restart ara
+  when:
+    - ara_configuration_file is defined
+    - ara_callback_plugins.stdout is defined
 
 - name: configure ara
   ini_file:
@@ -51,6 +59,8 @@
     - restart ara
   with_items:
     - "{{ ara_configuration }}"
+  when:
+    - ara_configuration is defined
 
 - name: start and enable ara
   service:

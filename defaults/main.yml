@@ -1,12 +1,13 @@
 ---
 # defaults file for ara
+# The ansible.cfg to modify.
 ara_configuration_file: /etc/ansible/ansible.cfg
-ara_callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
 
-ara_configuration:
-  - option: port
-    value: 9191
-  - option: playbook_per_page
-    value: 10
-  - option: result_per_page
-    value: 25
+# Extra options can be set using this structure.
+#ara_configuration:
+#  - option: port
+#    value: 9191
+#  - option: playbook_per_page
+#    value: 10
+#  - option: result_per_page
+#    value: 25
