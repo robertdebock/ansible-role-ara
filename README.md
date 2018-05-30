@@ -98,7 +98,7 @@ The simplest way possible:
     - robertdebock.ara
 ```
 
-Install this role using `galaxy install robertdebock.update`.
+Install this role using `galaxy install robertdebock.ara`.
 
 License
 -------
