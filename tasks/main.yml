@@ -7,6 +7,7 @@
     - "{{ ara_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
       | default(ara_packages[ansible_distribution]
       | default(ara_packages['default'] )) }}"
+  become: true
 
 - name: install ara
   pip:
@@ -22,6 +23,7 @@
     mode: 0750
   when:
     - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
+  become: true
 
 - name: register ara to a systemd system
   template:
@@ -31,6 +33,7 @@
     - ansible_service_mgr == "systemd"
   notify:
     - systemctl daemon-reload
+  become: true
 
 - name: find callback_plugins path
   command: python -m ara.setup.callback_plugins
@@ -73,3 +76,4 @@
     enabled: yes
   when:
     - ansible_virtualization_type != "docker"
+  become: true

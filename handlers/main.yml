@@ -6,7 +6,9 @@
     state: restarted
   when:
     - ansible_virtualization_type != "docker"
+  become: true
 
 - name: systemctl daemon-reload
   systemd:
     daemon_reload: yes
+  become: true
