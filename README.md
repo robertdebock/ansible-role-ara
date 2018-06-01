@@ -31,7 +31,9 @@ All other (ara) options can be defined by overwriting ara_configuration:
 
 You can configure ara using this structure:
 ```
-
+ara_configuration:
+  - option: port
+    value: 9191
 ```
 
 These are the settings you can use.
@@ -92,11 +94,14 @@ Example Playbook
 The simplest way possible:
 ```
 - hosts: servers
+  become: true
 
   roles:
     - robertdebock.bootstrap
     - robertdebock.ara
 ```
+
+You can also call this role without having `become: true`, because the tasks that require elevated privileges have `become: true` added.
 
 Install this role using `galaxy install robertdebock.ara`.
 
