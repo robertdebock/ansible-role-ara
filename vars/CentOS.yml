@@ -1,0 +1,8 @@
+---
+# vars file for ara
+ara_packages:
+  - gcc
+  - python-devel
+  - libffi-devel
+  - openssl-devel
+  - redhat-rpm-config

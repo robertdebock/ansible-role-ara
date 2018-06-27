@@ -1,0 +1,6 @@
+---
+# vars file for ara
+ara_packages:
+  - gcc
+
+ara_binary_location: /usr/bin
