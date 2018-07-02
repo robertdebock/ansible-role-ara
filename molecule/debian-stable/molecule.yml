@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: ara-debian-stretch
-    image: debian:stretch
+  - name: ara-debian-stable
+    image: debian:stable
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: debian-stretch
+  name: debian-stable
 verifier:
   name: goss
   lint:
