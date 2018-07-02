@@ -2,9 +2,9 @@
 galaxy_info:
   author: Robert de Bock
   role_name: ara
-  description: Provides ara (Ansible Runtime Analysis) for your system.
+  description: ARA records Ansible Playbook runs and provides intuitive interfaces to browse them.
   license: Apache License, Version 2.0
-  min_ansible_version: 2.3
+  min_ansible_version: 2.4
   min_ansible_container_version: 0.2.0
 
   platforms:
@@ -37,12 +37,20 @@ galaxy_info:
         - bionic
 
   galaxy_tags:
-    - ara
     - alpine
+    - ansible-records-ansible
+    - ara
+    - archlinux
     - centos
+    - cloud
     - debian
+    - development
     - fedora
+    - monitoring
+    - opensuse
+    - reporting
     - rhel
     - ubuntu
+    - web
 
 dependencies: []
