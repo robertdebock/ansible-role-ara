@@ -38,7 +38,7 @@ galaxy_info:
 
   galaxy_tags:
     - alpine
-    - ansible-records-ansible
+    - ansiblerecordsansible
     - ara
     - archlinux
     - centos
