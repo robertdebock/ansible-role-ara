@@ -45,7 +45,7 @@
 
 - name: find callback_plugins path
   command: python -m ara.setup.callback_plugins
-  changed_when: false
+  changed_when: no
   register: ara_callback_plugins
 
 - name: configure ansible to use ara
