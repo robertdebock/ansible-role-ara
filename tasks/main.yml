@@ -15,7 +15,7 @@
     name: "{{ item }}"
   with_items:
     - "{{ ara_packages }}"
-  become: true
+  become: yes
 
 - name: install ara
   pip:
@@ -31,7 +31,7 @@
     mode: 0750
   when:
     - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
-  become: true
+  become: yes
 
 - name: register ara to a systemd system
   template:
@@ -41,7 +41,7 @@
     - ansible_service_mgr == "systemd"
   notify:
     - systemctl daemon-reload
-  become: true
+  become: yes
 
 - name: find callback_plugins path
   command: python -m ara.setup.callback_plugins
@@ -59,7 +59,7 @@
   when:
     - ara_configuration_file is defined
     - ara_callback_plugins.stdout is defined
-  become: true
+  become: yes
 
 - name: configure ara
   ini_file:
@@ -81,4 +81,4 @@
     enabled: yes
   when:
     - ansible_virtualization_type != "docker"
-  become: true
+  become: yes
