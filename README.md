@@ -16,6 +16,7 @@ Requirements
 ------------
 
 Access to a repository containing packages, likely on the internet.
+Python pip available. (Hint: [python_pip](https://galaxy.ansible.com/robertdebock/python_pip).)
 
 Role Variables
 --------------
@@ -60,9 +61,9 @@ Dependencies
 This role can be used to prepare your system:
 
 - [robertdebock.bootstrap](https://travis-ci.org/robertdebock/ansible-role-bootstrap)
-- [robertdebock.buildtools](https://travis-ci.org/robertdebock/ansible-role-buildtools)
-- [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel)
-- [robertdebock.scl](https://travis-ci.org/robertdebock/ansible-role-scl)
+- [robertdebock.buildtools](https://travis-ci.org/robertdebock/ansible-role-buildtools) (For Alpine systems.)
+- [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel) (For CentOS 7 systems.)
+- [robertdebock.scl](https://travis-ci.org/robertdebock/ansible-role-scl) (For CentOS 6 systems.)
 - [robertdebock.python_pip](https://travis-ci.org/robertdebock/ansible-role-python_pip)
 
 Download the dependencies by issuing this command:
@@ -80,7 +81,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge|yes|yes|yes|
 |alpine-latest|yes|yes|yes|
 |archlinux|yes|yes|yes|
-|centos-6|no|no|no|
+|centos-6|yes|yes|yes|
 |centos-latest|yes|yes|yes|
 |debian-latest|yes|yes|yes|
 |debian-stable|yes|yes|yes|
@@ -96,14 +97,12 @@ Example Playbook
 
 The simplest way possible:
 ```
-- hosts: servers
+- hosts: centos-7
   become: true
 
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
-    - robertdebock.buildtools
-    - robertdebock.scl
     - robertdebock.python_pip
     - robertdebock.ara
 ```
