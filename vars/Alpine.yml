@@ -1,4 +1,0 @@
----
-# vars file for ara
-ara_packages:
-  - linux-headers
