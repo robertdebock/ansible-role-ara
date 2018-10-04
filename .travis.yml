@@ -12,7 +12,7 @@ env:
   - version=">=2.4,<2.5" distro="alpine-edge"
   - version=">=2.5,<2.6" distro="alpine-edge"
   - version=">=2.6,<2.7" distro="alpine-edge"
-  - version=">=2.7,<2.7" distro="alpine-edge"
+  - version=">=2.7,<2.8" distro="alpine-edge"
   - version="devel" distro="alpine-edge"
   - version=">=2.4,<2.5" distro="archlinux"
   - version=">=2.5,<2.6" distro="archlinux"
@@ -82,15 +82,15 @@ env:
 
 matrix:
   allow_failures:
-    - env: version="devel" distro="alpine-latest"
     - env: version=">=2.4,<2.5" distro="alpine-edge"
     - env: version=">=2.5,<2.6" distro="alpine-edge"
     - env: version=">=2.6,<2.7" distro="alpine-edge"
     - env: version=">=2.7,<2.8" distro="alpine-edge"
     - env: version="devel" distro="alpine-edge"
+    - env: version="devel" distro="alpine-latest"
     - env: version="devel" distro="archlinux"
     - env: version="devel" distro="centos-6"
-    - env: version="devel" distro="centos-7"
+    - env: version="devel" distro="centos-latest"
     - env: version="devel" distro="debian-latest"
     - env: version="devel" distro="debian-stable"
     - env: version=">=2.4,<2.5" distro="debian-unstable"
@@ -107,12 +107,12 @@ matrix:
     - env: version="devel" distro="opensuse-leap"
     - env: version="devel" distro="opensuse-tumbleweed"
     - env: version="devel" distro="ubuntu-artful"
-    - env: version="devel" distro="ubuntu-latest"
     - env: version=">=2.4,<2.5" distro="ubuntu-devel"
     - env: version=">=2.5,<2.6" distro="ubuntu-devel"
     - env: version=">=2.6,<2.7" distro="ubuntu-devel"
     - env: version=">=2.7,<2.8" distro="ubuntu-devel"
     - env: version="devel" distro="ubuntu-devel"
+    - env: version="devel" distro="ubuntu-latest"
 
 cache:
   - pip
