@@ -30,8 +30,6 @@ platforms:
     image: fedora:latest
   - name: ara-fedora-rawhide
     image: fedora:rawhide
-  - name: ara-gentoo
-    image: gentoo/stage3-amd64
   - name: ara-opensuse-leap
     image: opensuse:leap
   - name: ara-opensuse-tumbleweed

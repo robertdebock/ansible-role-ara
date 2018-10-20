@@ -52,7 +52,7 @@
     - ara_callback_plugins.stdout is defined
   become: yes
 
-- name: configure ara
+- name: configure ansible to use ara
   ini_file:
     path: "{{ ara_configuration_file }}"
     section: ara
