@@ -3,84 +3,75 @@ ara
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-ara.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-ara)
 
-Provides ara (ARA Reports Ansible) for your system.
+Installs ara (ARA Reports Ansible) for your system and configures Ansible to use ARA.
 
-[Unit tests](https://travis-ci.org/robertdebock/ansible-role-ara) are done on every commit and periodically.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-ara/issues)
+Example Playbook
+----------------
 
-To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+This example is taken from `molecule/default/playbook.yml`:
 ```
-pip install molecule
-molecule test
+---
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: false
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: ansible-role-ara
+
 ```
-There are many scenarios available, please have a look in the `molecule/` directory.
+
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```
+---
+# defaults file for ara
+
+# If you would like to update the packages that this role installs, set `ara_packages_state` to `latest`, otherwise use `default`.
+ara_package_state: present
+
+# The ansible.cfg to modify.
+ara_configuration_file: /etc/ansible/ansible.cfg
+
+# Extra options can be set using this structure.
+# ara_configuration:
+#   - option: port
+#     value: 9191
+#   - option: host
+#     value: 0.0.0.0
+#   - option: playbook_per_page
+#     value: 10
+#   - option: result_per_page
+#     value: 25
+
+```
+
+Requirements
+------------
+
+- Access to a repository containing packages, likely on the internet.
+- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
+
+These roles can be installed to ensure all requirements are met:
+
+- none
+
+To install all requirements at once: `ansible-galaxy install -r requirements.yml`.
 
 Context
 -------
+
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
 ![dependencies](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/ara.png "Dependency")
 
-Requirements
-------------
-
-Access to a repository containing packages, likely on the internet.
-Python pip available. (Hint: [python_pip](https://galaxy.ansible.com/robertdebock/python_pip).)
-
-Role Variables
---------------
-
-To tell Ansible to use ara, these variables can be modified:
-- ara_configuration_file can be set and defaults to /etc/ansible/ansible.cfg.
-- ara_callback_plugins should point to where ara is installed.
-
-All other (ara) options can be defined by overwriting ara_configuration:
-- ara_configuration:
-  - option: port
-    value: 9191
-
-You can configure ara using this structure:
-```
-ara_configuration:
-  - option: port
-    value: 9191
-```
-
-These are the settings you can use.
-
-- dir
-- database
-- host
-- port
-- logconfig
-- logfile
-- loglevel
-- logformat
-- sqldebug
-- ignore_parameters
-- ignore_empty_generation
-- ignore_mimetype_warnings
-- playbook_override
-- playbook_per_page
-- result_per_page
-
-Dependencies
-------------
-
-This role can be used to prepare your system:
-
-- [robertdebock.bootstrap](https://travis-ci.org/robertdebock/ansible-role-bootstrap)
-- [robertdebock.buildtools](https://travis-ci.org/robertdebock/ansible-role-buildtools) (For Alpine systems.)
-- [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel) (For CentOS 7 systems.)
-- [robertdebock.scl](https://travis-ci.org/robertdebock/ansible-role-scl) (For CentOS 6 systems.)
-- [robertdebock.python_pip](https://travis-ci.org/robertdebock/ansible-role-python_pip)
-
-Download the dependencies by issuing this command:
-```
-ansible-galaxy install --role-file requirements.yml
-```
 
 Compatibility
 -------------
@@ -107,29 +98,26 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
-Example Playbook
-----------------
+Testing
+-------
 
-The simplest way possible:
+[Unit tests](https://travis-ci.org/robertdebock/ansible-role-ara) are done on every commit and periodically.
+
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-ara/issues)
+
+To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
 ```
-- hosts: centos-7
-  become: true
-
-  roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.python_pip
-    - robertdebock.ara
+pip install molecule
+molecule test
 ```
+There are many specific scenarios available, please have a look in the `molecule/` directory.
 
-You can also call this role without having `become: true`, because the tasks that require elevated privileges have `become: true` added.
-
-Install this role using `galaxy install robertdebock.ara`.
 
 License
 -------
 
-Apache License, Version 2.0
+Apache-2.0
+
 
 Author Information
 ------------------

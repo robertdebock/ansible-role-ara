@@ -1,0 +1,1 @@
+Installs ara (ARA Reports Ansible) for your system and configures Ansible to use ARA.
