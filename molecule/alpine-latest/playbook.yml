@@ -5,7 +5,7 @@
   gather_facts: false
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.buildtools
-    - role: robertdebock.python_pip
-    - role: ansible-role-ara
+    - robertdebock.bootstrap
+    - robertdebock.buildtools
+    - robertdebock.python_pip
+    - ansible-role-ara
