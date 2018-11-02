@@ -2,8 +2,7 @@
 # tasks file for ara
 - name: install required packages
   package:
-    name: "{{ ara_packages[ansible_distribution]
-          | default (ara_packages['default'] ) }}"
+    name: "{{ ara_packages }}"
     state: "{{ ara_package_state }}"
   become: yes
 

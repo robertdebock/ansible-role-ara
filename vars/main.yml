@@ -1,6 +1,6 @@
 ---
 # vars file for ara
-ara_packages:
+_ara_packages:
   default:
     - gcc
   Alpine:
@@ -34,7 +34,11 @@ ara_packages:
     - libffi-dev
     - libssl-dev
 
-ara_binary_location:
+ara_packages: "{{ _ara_packages[ansible_distribution] | default (_ara_packages['default'] ) }}"
+
+_ara_binary_location:
   default: /usr/bin
   Debian: /usr/local/bin
   Ubuntu: /usr/local/bin
+
+ara_binary_location: "{{ _ara_binary_location[ansible_distribution] | default(_ara_binary_location['default']) }}"
