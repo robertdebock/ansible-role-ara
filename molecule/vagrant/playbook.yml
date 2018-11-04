@@ -6,7 +6,6 @@
 
   roles:
     - robertdebock.bootstrap
-    - robertdebock.buildtools
     - robertdebock.epel
     - robertdebock.python_pip
     - ansible-role-ara
