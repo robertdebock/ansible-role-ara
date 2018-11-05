@@ -3,8 +3,7 @@ ara
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-ara.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-ara)
 
-Installs ara (ARA Reports Ansible) for your system and configures Ansible to use ARA.
-
+The purpose of this role is to install and configure ara on your system.
 
 Example Playbook
 ----------------
@@ -19,6 +18,7 @@ This example is taken from `molecule/default/playbook.yml`:
 
   roles:
     - robertdebock.bootstrap
+    - robertdebock.buildtools
     - robertdebock.epel
     - robertdebock.python_pip
     - robertdebock.ara
@@ -38,6 +38,9 @@ ara_package_state: present
 
 # The ansible.cfg to modify.
 ara_configuration_file: /etc/ansible/ansible.cfg
+
+# The user to run ara as. Typically root, but if you run playbooks under your username, ara saves data in your homedirectory. In that case change the ara_user to your username.
+ara_user: root
 
 # Extra options can be set using this structure.
 # ara_configuration:
