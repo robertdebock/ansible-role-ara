@@ -40,6 +40,8 @@ platforms:
     image: ubuntu:devel
   - name: ara-ubuntu-latest
     image: ubuntu:latest
+  - name: ara-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
