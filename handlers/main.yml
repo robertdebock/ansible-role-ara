@@ -5,7 +5,7 @@
     name: ara
     state: restarted
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or ara_ignore_docker
   become: yes
 
 - name: systemctl daemon-reload
