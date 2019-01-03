@@ -51,7 +51,7 @@
     - ara_callback_plugins.stdout is defined
   become: yes
 
-- name: configure ansible to use ara
+- name: configure ara
   ini_file:
     path: "{{ ara_configuration_file }}"
     section: ara
@@ -63,6 +63,8 @@
     - "{{ ara_configuration }}"
   when:
     - ara_configuration is defined
+  loop_control:
+    label: "{{ item.option }}"
 
 - name: start and enable ara
   service:
