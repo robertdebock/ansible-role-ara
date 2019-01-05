@@ -43,4 +43,5 @@ _ara_binary_location:
 
 ara_binary_location: "{{ _ara_binary_location[ansible_distribution] | default(_ara_binary_location['default']) }}"
 
-ara_setup_command: python -m ara.setup.callback_plugins || python3 -m ara.setup.callback_plugins
+ara_setup_command_python2: python -m ara.setup.callback_plugins
+ara_setup_command_python3: python3 -m ara.setup.callback_plugins

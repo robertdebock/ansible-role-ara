@@ -34,7 +34,7 @@
   become: yes
 
 - name: find callback_plugins path
-  shell: "{{ ara_setup_command }}"
+  shell: "{{ ara_setup_command_python2 }} || {{ ara_setup_command_python3 }}"
   changed_when: no
   register: ara_callback_plugins
 
