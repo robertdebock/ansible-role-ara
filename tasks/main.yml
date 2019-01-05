@@ -5,13 +5,16 @@
     name: "{{ ara_packages }}"
     state: "{{ ara_package_state }}"
   become: yes
+  register: ara_install_required_packages
+  until: ara_install_required_packages is succeeded
+  retries: 3
 
 - name: install ara
   pip:
     name: ara
     state: "{{ ara_package_state }}"
-  register: install_ara
-  until: install_ara is succeeded
+  register: ara_install_ara
+  until: ara_install_ara is succeeded
   retries: 3
 
 - name: register ara to a sysvinit system
