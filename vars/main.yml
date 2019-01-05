@@ -42,3 +42,5 @@ _ara_binary_location:
   Ubuntu: /usr/local/bin
 
 ara_binary_location: "{{ _ara_binary_location[ansible_distribution] | default(_ara_binary_location['default']) }}"
+
+ara_setup_command: python -m ara.setup.callback_plugins || python3 -m ara.setup.callback_plugins
