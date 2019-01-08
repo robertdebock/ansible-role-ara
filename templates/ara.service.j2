@@ -5,7 +5,6 @@ Description=Ansible Runtime Analyser
 [Service]
 Type=simple
 ExecStart={{ ara_binary_location }}/ara-manage runserver
-ExecStop=/usr/bin/killall ara-manage
 User={{ ara_user }}
 
 [Install]
