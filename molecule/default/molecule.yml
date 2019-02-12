@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: ara-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: ara-ubuntu-artful
-    image: ubuntu:artful
+  - name: ara-ubuntu-latest
+    image: ubuntu:latest
+  - name: ara-ubuntu-rolling
+    image: ubuntu:rolling
   - name: ara-ubuntu-devel
     image: ubuntu:devel
   - name: ara-ubuntu-latest
