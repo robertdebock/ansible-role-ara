@@ -25,9 +25,6 @@ _ara_packages:
   openSUSE Leap:
     - gcc
     - python-devel
-  openSUSE Tumbleweed:
-    - gcc
-    - python-devel
   Ubuntu:
     - gcc
     - python-dev
