@@ -17,24 +17,9 @@
   until: ara_install_ara is succeeded
   retries: 3
 
-- name: register ara to a sysvinit system
-  template:
-    src: ara.j2
-    dest: "/etc/init.d/ara"
-    mode: 0750
-  when:
-    - ansible_service_mgr == "sysvinit" or ansible_service_mgr == "upstart"
-  become: yes
-
-- name: register ara to a systemd system
-  template:
-    src: ara.service.j2
-    dest: /etc/systemd/system/ara.service
-  when:
-    - ansible_service_mgr == "systemd"
-  notify:
-    - systemctl daemon-reload
-  become: yes
+- name: create ara service
+  import_role:
+    name: robertdebock.service
 
 - name: find callback_plugins path
   shell: "{{ ara_setup_command_python2 }} || {{ ara_setup_command_python3 }}"
