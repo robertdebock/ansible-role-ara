@@ -3,7 +3,7 @@
 - name: install required packages
   package:
     name: "{{ ara_packages }}"
-    state: "{{ ara_package_state }}"
+    state: present
   become: yes
   register: ara_install_required_packages
   until: ara_install_required_packages is succeeded
@@ -12,7 +12,7 @@
 - name: install ara
   pip:
     name: ara
-    state: "{{ ara_package_state }}"
+    state: present
   register: ara_install_ara
   until: ara_install_ara is succeeded
   retries: 3
