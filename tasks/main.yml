@@ -20,6 +20,7 @@
 - name: create ara service
   import_role:
     name: robertdebock.service
+  become: yes
 
 - name: find callback_plugins path
   shell: "{{ ara_setup_command_python2 }} || {{ ara_setup_command_python3 }}"
