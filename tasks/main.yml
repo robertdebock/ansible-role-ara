@@ -13,6 +13,7 @@
   pip:
     name: ara
     state: present
+  become: yes
   register: ara_install_ara
   until: ara_install_ara is succeeded
   retries: 3
