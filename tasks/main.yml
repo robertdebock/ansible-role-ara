@@ -44,6 +44,7 @@
   when:
     - ara_configuration_file is defined
     - ara_callback_plugins.stdout is defined
+  become: no
 
 - name: configure ara
   ini_file:
