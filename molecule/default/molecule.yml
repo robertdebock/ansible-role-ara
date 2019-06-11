@@ -19,9 +19,9 @@ platforms:
   - name: ara-archlinux
     image: archlinux/base
     pre_build_image: yes
-  - name: ara-centos-6
-    image: centos:6
-    pre_build_image: yes
+  # - name: ara-centos-6
+  #   image: centos:6
+  #   pre_build_image: yes
   - name: ara-centos-latest
     image: centos:latest
     pre_build_image: yes
