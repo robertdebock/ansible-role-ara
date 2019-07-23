@@ -101,18 +101,18 @@ This role has been tested against the following distributions and Ansible versio
 |distribution|ansible 2.7|ansible 2.8|ansible devel|
 |------------|-----------|-----------|-------------|
 |alpine-edge*|yes|yes|yes*|
-|alpine-latest|yes|yes|yes*|
+|alpine-latest|no|no|yes*|
 |archlinux|yes|yes|yes*|
 |centos-6|no|no|no*|
-|centos-latest|yes|yes|yes*|
-|debian-stable|yes|yes|yes*|
-|debian-unstable*|yes|yes|yes*|
+|centos-latest|no|no|no*|
+|debian-stable|no|no|no*|
+|debian-unstable*|no|no|no*|
 |fedora-latest|yes|yes|yes*|
 |fedora-rawhide*|yes|yes|yes*|
-|opensuse-leap|yes|yes|yes*|
-|ubuntu-devel*|yes|yes|yes*|
-|ubuntu-latest|yes|yes|yes*|
-|ubuntu-rolling|yes|yes|yes*|
+|opensuse-leap|yes|no|no*|
+|ubuntu-devel*|no|no|no*|
+|ubuntu-latest|no|no|no*|
+|ubuntu-rolling|no|no|no*|
 
 A single star means the build may fail, it's marked as an experimental build.
 
