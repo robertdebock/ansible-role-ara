@@ -100,8 +100,8 @@ This role has been tested against the following distributions and Ansible versio
 
 |distribution|ansible 2.7|ansible 2.8|ansible devel|
 |------------|-----------|-----------|-------------|
-|alpine-edge*|yes|yes|yes*|
-|alpine-latest|no|no|yes*|
+|alpine-edge*|no|no|no*|
+|alpine-latest|no|no|no*|
 |archlinux|yes|yes|yes*|
 |centos-6|no|no|no*|
 |centos-latest|no|no|no*|
@@ -109,7 +109,7 @@ This role has been tested against the following distributions and Ansible versio
 |debian-unstable*|no|no|no*|
 |fedora-latest|yes|yes|yes*|
 |fedora-rawhide*|yes|yes|yes*|
-|opensuse-leap|yes|no|no*|
+|opensuse-leap|no|no|no*|
 |ubuntu-devel*|no|no|no*|
 |ubuntu-latest|no|no|no*|
 |ubuntu-rolling|no|no|no*|
