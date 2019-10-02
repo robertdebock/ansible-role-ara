@@ -6,6 +6,9 @@ ara
 
 Install and configure ara on your system.
 
+<img src="https://img.shields.io/ansible/role/d/24687"/>
+<img src="https://img.shields.io/ansible/quality/24687"/>
+
 Example Playbook
 ----------------
 
@@ -114,7 +117,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|yes|yes|yes*|
-|centos-6|no|no|no*|
+|centos-7|no|no|no*|
 |centos-latest|no|no|no*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
