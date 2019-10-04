@@ -1,0 +1,4 @@
+---
+exceptions:
+  - variation: CentOS
+    reason: No matching distribution found for Django>=2.1.5
