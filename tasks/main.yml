@@ -1,13 +1,5 @@
 ---
 # tasks file for ara
-- name: install required packages
-  package:
-    name: "{{ ara_packages }}"
-    state: present
-  register: ara_install_required_packages
-  until: ara_install_required_packages is succeeded
-  retries: 3
-
 - name: install ara
   pip:
     name: ara[server]
