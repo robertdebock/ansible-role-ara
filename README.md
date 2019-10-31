@@ -111,7 +111,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |centos|latest|no|
 |fedora|latest|no|
 |fedora|rawhide|yes|
-|opensuse|latest|no|
 |ubuntu|rolling|yes|
 |ubuntu|devel|yes|
 |ubuntu|latest|no|
