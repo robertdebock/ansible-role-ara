@@ -1,4 +1,6 @@
 ---
 exceptions:
+  - variation: Alpine
+    reason: "Could not find a version that satisfies the requirement Django>=2.1.5"
   - variation: CentOS
     reason: No matching distribution found for Django>=2.1.5
