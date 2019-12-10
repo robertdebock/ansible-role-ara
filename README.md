@@ -2,7 +2,7 @@ ara
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-ara"> <img src="https://travis-ci.org/robertdebock/ansible-role-ara.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/24687"/> <img src="https://img.shields.io/ansible/quality/24687"/>
+<a href="https://travis-ci.org/robertdebock/ansible-role-ara"> <img src="https://travis-ci.org/robertdebock/ansible-role-ara.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/"/> <img src="https://img.shields.io/ansible/quality/"/>
 
 Install and configure ara on your system.
 
