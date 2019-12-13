@@ -33,7 +33,6 @@ galaxy_info:
     - centos
     - development
     - monitoring
-    - rhel
     - reporting
 
 dependencies: []
