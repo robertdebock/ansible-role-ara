@@ -19,7 +19,6 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - artful
         - bionic
 
   galaxy_tags:
