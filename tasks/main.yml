@@ -18,6 +18,7 @@
       command: "{{ ara_setup_command_python2 }}"
       register: ara_callback_plugins
       changed_when: no
+      check_mode: no
 
   rescue:
     - name: try python3
