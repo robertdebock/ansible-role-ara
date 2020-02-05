@@ -46,8 +46,7 @@
     value: "{{ item.value }}"
   notify:
     - restart ara
-  with_items:
-    - "{{ ara_configuration }}"
+  loop: "{{ ara_configuration }}"
   when:
     - ara_configuration is defined
   loop_control:
