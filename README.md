@@ -29,10 +29,10 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
   gather_facts: no
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.buildtools
-    - robertdebock.epel
-    - robertdebock.python_pip
+    - role: robertdebock.bootstrap
+    - role: robertdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
