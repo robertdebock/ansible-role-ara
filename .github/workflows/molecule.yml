@@ -45,7 +45,9 @@ jobs:
           - image: "fedora"
             tag: "rawhide"
           - image: "ubuntu"
-            tag: "1804"
+            tag: "bionic"
+          - image: "ubuntu"
+            tag: "xenial"
     steps:
       - name: checkout
         uses: actions/checkout@v2
