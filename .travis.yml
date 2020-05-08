@@ -14,12 +14,11 @@ env:
   global:
     namespace="robertdebock"
   matrix:
+    - image="centos" tag="latest"
     - image="debian" tag="latest"
     - image="debian" tag="bullseye"
-    - image="centos" tag="latest"
     - image="fedora" tag="31"
     - image="fedora" tag="latest"
-    - image="fedora" tag="rawhide"
     - image="ubuntu" tag="bionic"
     - image="ubuntu" tag="xenial"
 
