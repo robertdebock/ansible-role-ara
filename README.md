@@ -2,9 +2,9 @@
 
 Install and configure ara on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-ara.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-ara)|[![github](https://github.com/robertdebock/ansible-role-ara/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-ara/actions)|[![quality](https://img.shields.io/ansible/quality/24687)](https://galaxy.ansible.com/robertdebock/ara)|[![downloads](https://img.shields.io/ansible/role/d/24687)](https://galaxy.ansible.com/robertdebock/ara)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-ara.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-ara)|[![github](https://github.com/robertdebock/ansible-role-ara/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-ara/actions)|[![quality](https://img.shields.io/ansible/quality/24687)](https://galaxy.ansible.com/robertdebock/ara)|[![downloads](https://img.shields.io/ansible/role/d/24687)](https://galaxy.ansible.com/robertdebock/ara)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-ara.svg)](https://github.com/robertdebock/ansible-role-ara/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -87,8 +87,8 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
-- robertdebock.epel
 - robertdebock.buildtools
+- robertdebock.epel
 - robertdebock.python_pip
 - robertdebock.service
 
