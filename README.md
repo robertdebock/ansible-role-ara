@@ -56,9 +56,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for ara
-
-# If you would like to update the packages that this role installs, set `ara_packages_state` to `latest`, otherwise use `default`.
-
 # The ansible.cfg to modify.
 ara_configuration_file: /etc/ansible/ansible.cfg
 
