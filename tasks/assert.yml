@@ -1,0 +1,31 @@
+---
+- name: test if ara_configuration_file is set correctly
+  assert:
+    that:
+      - ara_configuration_file is defined
+      - ara_configuration_file | length > 0
+
+- name: test if ara_user is set correctly
+  assert:
+    that:
+      - ara_user is defined
+      - ara_user | length > 0
+
+- name: test if ara_configuration is set correctly
+  assert:
+    that:
+      - ara_configuration | length > 0
+      - ara_configuration is iterable
+  when:
+    - ara_configuration is defined
+
+- name: test if item in ara_configuration is set correctly
+  assert:
+    that:
+      - item.option is defined
+      - item.option | length > 0
+      - item.value is defined
+      - item.value | length > 0
+  loop: "{{ ara_configuration }}"
+  when:
+    - ara_configuration is defined
