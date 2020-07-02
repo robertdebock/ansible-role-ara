@@ -26,6 +26,7 @@
       - item.option | length > 0
       - item.value is defined
       - item.value | length > 0
+    quiet: yes
   loop: "{{ ara_configuration }}"
   when:
     - ara_configuration is defined
