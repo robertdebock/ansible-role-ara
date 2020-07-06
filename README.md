@@ -56,6 +56,7 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for ara
+
 # The ansible.cfg to modify.
 ara_configuration_file: /etc/ansible/ansible.cfg
 

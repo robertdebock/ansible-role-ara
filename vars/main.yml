@@ -1,5 +1,6 @@
 ---
 # vars file for ara
+
 _ara_binary_location:
   default: /usr/bin
   Debian: /usr/local/bin
