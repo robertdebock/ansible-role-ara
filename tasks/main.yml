@@ -7,9 +7,6 @@
   pip:
     name: ara[server]
     state: present
-  register: ara_install_ara
-  until: ara_install_ara is succeeded
-  retries: 3
 
 - name: create ara service
   import_role:
