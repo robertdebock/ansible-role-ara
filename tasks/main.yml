@@ -32,6 +32,7 @@
     section: defaults
     option: callback_plugins
     value: "{{ ara_callback_plugins.stdout }}"
+    mode: "0644"
   notify:
     - restart ara
   when:
@@ -44,6 +45,7 @@
     section: ara
     option: "{{ item.option }}"
     value: "{{ item.value }}"
+    mode: "0644"
   notify:
     - restart ara
   loop: "{{ ara_configuration }}"
