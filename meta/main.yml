@@ -28,7 +28,6 @@ galaxy_info:
     - ara
     - arareportsansible
     - cloud
-    - centos
     - development
     - monitoring
     - reporting
