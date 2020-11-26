@@ -1,4 +1,5 @@
 ---
+
 - name: test if ara_configuration_file is set correctly
   assert:
     that:
