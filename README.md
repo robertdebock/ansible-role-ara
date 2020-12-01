@@ -107,8 +107,8 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| Alpine | Could not find a version that satisfies the requirement Django>=2.1.5 |
-| CentOS | No matching distribution found for Django>=2.1.5 |
+| alpine | Could not find a version that satisfies the requirement Django>=2.1.5 |
+| centos:7 | No matching distribution found for Django>=2.1.5 |
 | amazonlinux:1 | No package matching 'python3-pip' |
 | amazonlinux | No module named pkg_resources |
 
