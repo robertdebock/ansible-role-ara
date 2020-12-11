@@ -28,33 +28,34 @@
       register: ara_callback_plugins
       changed_when: no
 
-- name: configure ansible to use ara
-  ini_file:
-    path: "{{ ara_configuration_file }}"
-    section: defaults
-    option: callback_plugins
-    value: "{{ ara_callback_plugins.stdout }}"
-    mode: "0644"
-  notify:
-    - restart ara
-  when:
-    - ara_configuration_file is defined
-    - ara_callback_plugins.stdout is defined
+- name: configure ansible and ara
+  block:
+    - name: configure ansible to use ara
+      ini_file:
+        path: "{{ ara_configuration_file }}"
+        section: defaults
+        option: callback_plugins
+        value: "{{ ara_callback_plugins.stdout }}"
+        mode: "0644"
+      notify:
+        - restart ara
+      when:
+        - ara_callback_plugins.stdout is defined
 
-- name: configure ara
-  ini_file:
-    path: "{{ ara_configuration_file }}"
-    section: ara
-    option: "{{ item.option }}"
-    value: "{{ item.value }}"
-    mode: "0644"
-  notify:
-    - restart ara
-  loop: "{{ ara_configuration }}"
+    - name: configure ara
+      ini_file:
+        path: "{{ ara_configuration_file }}"
+        section: ara
+        option: "{{ item.option }}"
+        value: "{{ item.value }}"
+        mode: "0644"
+      notify:
+        - restart ara
+      loop: "{{ ara_configuration }}"
+      loop_control:
+        label: "{{ item.option }}"
   when:
     - ara_configuration is defined
-  loop_control:
-    label: "{{ item.option }}"
 
 - name: start and enable ara
   service:
