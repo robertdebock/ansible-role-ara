@@ -13,6 +13,12 @@
 - name: create ara service
   import_role:
     name: robertdebock.service
+  vars:
+    service_list:
+      - name: ara
+        description: Ansible Reports Ara
+        start_command: "{{ ara_binary_location }}/ara-manage runserver"
+        user_name: "{{ ara_user }}"
 
 - name: find callback_plugins path
   block:
