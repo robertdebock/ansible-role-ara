@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install ara
-  pip:
+  ansible.builtin.pip:
     name: ara[server]
     state: present
 
 - name: create ara service
-  import_role:
+  ansible.builtin.import_role:
     name: robertdebock.service
   vars:
     service_list:
@@ -65,7 +65,7 @@
     - ara_configuration is defined
 
 - name: start and enable ara
-  service:
+  ansible.builtin.service:
     name: ara
     state: started
     enabled: yes
