@@ -38,7 +38,7 @@
 - name: configure ansible and ara
   block:
     - name: configure ansible to use ara
-      ini_file:
+      community.general.ini_file:
         path: "{{ ara_configuration_file }}"
         section: defaults
         option: callback_plugins
@@ -50,7 +50,7 @@
         - ara_callback_plugins.stdout is defined
 
     - name: configure ara
-      ini_file:
+      community.general.ini_file:
         path: "{{ ara_configuration_file }}"
         section: ara
         option: "{{ item.option }}"
