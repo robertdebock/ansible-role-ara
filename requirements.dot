@@ -1,0 +1,17 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "ara" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.buildtools" [fillcolor=green style=filled]
+    "robertdebock.epel" [fillcolor=green style=filled]
+    "robertdebock.python_pip" [fillcolor=green style=filled]
+    "robertdebock.service" [fillcolor=green style=filled]
+  }
+  "ara" -> "robertdebock.bootstrap"
+  "ara" -> "robertdebock.buildtools"
+  "ara" -> "robertdebock.epel"
+  "ara" -> "robertdebock.python_pip"
+  "ara" -> "robertdebock.service"
+}
