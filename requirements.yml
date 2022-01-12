@@ -7,3 +7,4 @@ roles:
   - name: robertdebock.service
 collections:
   - name: community.general
+  - name: community.docker
