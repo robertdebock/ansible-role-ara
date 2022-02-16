@@ -1,3 +1,7 @@
+# ARCHIVED
+
+This role is archived. David maintains a much better [collection](https://galaxy.ansible.com/recordsansible/ara) to do the same thing.
+
 # [ara](#ara)
 
 Install and configure ara on your system.
